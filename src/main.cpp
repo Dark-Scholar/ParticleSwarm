@@ -3,8 +3,14 @@
 
 int main(int argc, char *argv[]) {
 
-	std::cout << "SDL Works" << std::endl;
-	std::cin.get();
+	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+		std::cout << "SDL Init Failed!" << std::endl;
+		return 1;
+	}
+
+	std::cout << "SDL Init succeeded!" << std::endl;
+
+	SDL_Quit();
 
 	return 0;
 }
