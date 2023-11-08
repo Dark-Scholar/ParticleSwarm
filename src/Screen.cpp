@@ -65,14 +65,29 @@ namespace vtech {
 			buffer[i] = 0xFF000000;
 		}
 
+		return true;
+	}
+
+	void Screen::update() {
 		// Pitch is the amount of memory allocated to a single row of pixels
 		SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH*sizeof(Uint32));
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, texture, NULL, NULL);
 		SDL_RenderPresent(renderer);
+	}
 
+	void Screen::setPixel(int x, int y, Uint8 r, Uint8 g, Uint8 b) {
+		Uint32 color = 0;
 
-		return true;
+		color += r;
+		color <<= 8;
+		color += g;
+		color <<= 8;
+		color += b;
+		color <<= 8;
+		color += 0xFF; // Alpha
+
+		buffer[(y * SCREEN_WIDTH) + x] = color;
 	}
 
 	void Screen::close() {
