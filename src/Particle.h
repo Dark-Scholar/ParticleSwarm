@@ -14,6 +14,8 @@ namespace vtech {
 
 			Particle();
 			virtual ~Particle();
+
+			void update();
 	};
 };
 

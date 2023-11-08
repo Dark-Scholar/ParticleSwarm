@@ -10,4 +10,11 @@ namespace vtech {
 	}
 
 	Particle::~Particle() {}
+
+	void Particle::update() {
+		const double velocity = 0.01;
+
+		x += velocity;
+		y += velocity;
+	}
 };

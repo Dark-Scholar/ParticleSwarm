@@ -14,6 +14,8 @@ namespace vtech {
 			virtual ~Swarm();
 
 			const Particle *const getParticles() { return particles; }
+
+			void update();
 	};
 };
 
