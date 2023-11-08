@@ -122,4 +122,8 @@ namespace vtech {
 		}
 		return true;
 	};
+
+	void Screen::clear() {
+		memset(buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT *sizeof(Uint32)); // Clear particle buffer
+	}
 };

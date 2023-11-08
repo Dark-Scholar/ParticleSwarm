@@ -33,6 +33,7 @@ namespace vtech {
 				Uint8 b
 			);
 			void close();
+			void clear();
 	};
 };
 
