@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <iostream>
+#include <math.h>
 
 #include "Screen.h"
 
@@ -12,14 +13,17 @@ int main(int argc, char *argv[]) {
 	}
 
 	while (true) {
+		int elapsed = SDL_GetTicks();
+
+		unsigned char green = (unsigned char)((1 + sin(elapsed * 0.0001))) * 128;
+		unsigned char red = (unsigned char)((1 + sin(elapsed * 0.0002)) * 128);
+		unsigned char blue = (unsigned char)((1 + sin(elapsed * 0.0003)) * 128);
 
 		for (int y = 0; y < vtech::Screen::SCREEN_HEIGHT; y++) {
 			for (int x = 0; x < vtech::Screen::SCREEN_WIDTH; x++) {
-				screen.setPixel(x, y, 128, 0, 255);
+				screen.setPixel(x, y, red, green, blue);
 			}
 		}
-
-		screen.setPixel(400, 300, 255, 255, 255);
 
 		screen.update();
 
