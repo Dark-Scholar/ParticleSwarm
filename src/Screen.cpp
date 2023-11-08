@@ -1,9 +1,7 @@
 #include "Screen.h"
 
 namespace vtech {
-	Screen::Screen(): window(NULL), renderer(NULL), texture(NULL), buffer(NULL) {
-
-	}
+	Screen::Screen(): window(NULL), renderer(NULL), texture(NULL), buffer(NULL) {}
 
 	Screen::~Screen() {
 		close();
@@ -121,5 +119,5 @@ namespace vtech {
 			}
 		}
 		return true;
-	}
+	};
 };

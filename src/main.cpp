@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 		int elapsed = SDL_GetTicks();
 
 		unsigned char green = (unsigned char)((1 + sin(elapsed * 0.0001))) * 128;
-		unsigned char red = (unsigned char)((1 + sin(elapsed * 0.0002)) * 128);
+		unsigned char red = (unsigned char)((1 + cos(elapsed * 0.0002)) * 128);
 		unsigned char blue = (unsigned char)((1 + sin(elapsed * 0.0003)) * 128);
 
 		for (int y = 0; y < vtech::Screen::SCREEN_HEIGHT; y++) {
@@ -35,4 +35,4 @@ int main(int argc, char *argv[]) {
 	screen.close();
 
 	return 0;
-}
+};

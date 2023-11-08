@@ -20,7 +20,7 @@ namespace vtech {
 		public:
 			// iniitalization list
 			Screen();
-			~Screen();
+			virtual ~Screen();
 
 			bool init();
 			bool processEvents();
@@ -34,6 +34,6 @@ namespace vtech {
 			);
 			void close();
 	};
-}
+};
 
 #endif
