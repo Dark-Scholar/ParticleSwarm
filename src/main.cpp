@@ -59,7 +59,11 @@ int main(int argc, char *argv[]) {
 
 	// Calculate the total number of bytes for the buffer
 	size_t bufferSizeInBytes = SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32);
-	memset(buffer, 255, bufferSizeInBytes);
+	memset(buffer, 0, bufferSizeInBytes);
+
+	for (int i = 0; i < SCREEN_WIDTH*SCREEN_HEIGHT; i++) {
+		buffer[i] = 0xFFFFFF00;
+	}
 
 	// Pitch is the amount of memory allocated to a single row of pixels
 	SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH*sizeof(Uint32));
