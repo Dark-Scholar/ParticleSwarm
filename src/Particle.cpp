@@ -51,5 +51,9 @@ namespace vtech {
 		if (x <= -1.0 || x >= 1.0 || y <= -1.0 || y >= 1.0) {
       init();
     }
+
+		if (rand() < RAND_MAX/100) {
+			init();
+		}
 	}
 };

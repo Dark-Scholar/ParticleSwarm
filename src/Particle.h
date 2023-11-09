@@ -15,7 +15,7 @@ namespace vtech {
 			double x;
 			double y;
 
-			double expansionSpeed = 0.0002;
+			double expansionSpeed = 0.002;
 			double direction;
 			double velocity;
 
