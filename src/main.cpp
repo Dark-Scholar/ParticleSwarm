@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 			vtech::Particle particle = particles[i];
 
 			int x = (particle.x + 1) * vtech::Screen::SCREEN_WIDTH / 2;
-			int y = (particle.y + 1) * vtech::Screen::SCREEN_HEIGHT / 2;
+			int y = (particle.y * vtech::Screen::SCREEN_WIDTH / 2) + (vtech::Screen::SCREEN_HEIGHT / 2);
 
 			screen.setPixel(x, y, red, green, blue);
 		}
