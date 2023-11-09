@@ -7,14 +7,23 @@ namespace vtech {
 		// range -1 to +1
 		x = ((2.0 * rand())/RAND_MAX) -1;
 		y = ((2.0 * rand())/RAND_MAX) -1;
+
+		velocityX = universalConstant * (((2.0 * rand())/RAND_MAX) - 1);
+		velocityY = universalConstant * (((2.0 * rand())/RAND_MAX) - 1);
 	}
 
 	Particle::~Particle() {}
 
 	void Particle::update() {
-		const double velocity = 0.01;
+		x += velocityX;
+		y += velocityY;
 
-		x += velocity;
-		y += velocity;
+		if (x <= -1.0 || x >= 1.0) {
+			x = -x;
+		}
+
+		if (y <= -1.0 || x >= 1.0) {
+			y = -y;
+		}
 	}
 };

@@ -12,6 +12,10 @@ namespace vtech {
 			double x;
 			double y;
 
+			const double universalConstant = 0.001;
+		  double velocityX;
+		  double velocityY;
+
 			Particle();
 			virtual ~Particle();
 

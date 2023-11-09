@@ -6,7 +6,7 @@
 namespace vtech {
 	class Swarm {
 		public:
-			const static int N_PARTICLES = 5000;
+			const static int N_PARTICLES = 1000;
 		private:
 			Particle *particles;
 		public:
