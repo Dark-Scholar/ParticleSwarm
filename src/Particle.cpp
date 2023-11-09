@@ -12,11 +12,11 @@ namespace vtech {
 
 	Particle::~Particle() {}
 
-	void Particle::update() {
+	void Particle::update(int interval) {
 		double velocityX = velocity * cos(direction);
 		double velocityY = velocity * sin(direction);
 
-		x += velocityX;
-		y += velocityY;
+		x += velocityX * interval;
+		y += velocityY * interval;
 	}
 };

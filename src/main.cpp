@@ -20,10 +20,14 @@ int main(int argc, char *argv[]) {
 	}
 
 	while (true) {
+		/* We use this to get an interval to multiply our velocities
+		   this ensures the amount we move a particle by on each update
+			 is proportional to the amount the particle moved on the previous
+			 update.*/
 		int elapsed = SDL_GetTicks();
 
 		screen.clear();
-		swarm.update();
+		swarm.update(elapsed);
 
 		unsigned char green = (unsigned char)((1 + sin(elapsed * 0.0001))) * 128;
 		unsigned char red = (unsigned char)((1 + cos(elapsed * 0.0002)) * 128);

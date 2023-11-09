@@ -9,13 +9,14 @@ namespace vtech {
 			const static int N_PARTICLES = 10000;
 		private:
 			Particle *particles;
+			int lastTime;
 		public:
 			Swarm();
 			virtual ~Swarm();
 
 			const Particle *const getParticles() { return particles; }
 
-			void update();
+			void update(int elapsed);
 	};
 };
 
