@@ -15,7 +15,8 @@ namespace vtech {
 			SDL_Window *window;
 			SDL_Renderer *renderer;
 			SDL_Texture *texture;
-			Uint32 *buffer;
+			Uint32 *buffer1;
+			Uint32 *buffer2;
 
 		public:
 			// iniitalization list
@@ -33,7 +34,7 @@ namespace vtech {
 				Uint8 b
 			);
 			void close();
-			void clear();
+			void boxBlur();
 	};
 };
 
